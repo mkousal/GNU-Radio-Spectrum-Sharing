@@ -19,7 +19,7 @@ add_subdirectory(bindings)
 ########################################################################
 # Install python sources
 ########################################################################
-gr_python_install(FILES __init__.py energyDetector.py carrierAllocator.py scheduler.py DESTINATION ${GR_PYTHON_DIR}/gnuradio/spectrumSharing)
+gr_python_install(FILES __init__.py energyDetector.py carrierAllocator.py scheduler.py CAF.py DESTINATION ${GR_PYTHON_DIR}/gnuradio/spectrumSharing)
 
 ########################################################################
 # Handle the unit tests

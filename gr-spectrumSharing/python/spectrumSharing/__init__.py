@@ -24,4 +24,5 @@ except ModuleNotFoundError:
 from .energyDetector import energyDetector
 from .carrierAllocator import carrierAllocator
 from .scheduler import scheduler
+from .CAF import CAF
 #

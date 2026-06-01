@@ -8,4 +8,5 @@
 install(FILES
     spectrumSharing_energyDetector.block.yml
     spectrumSharing_carrierAllocator.block.yml
-    spectrumSharing_scheduler.block.yml DESTINATION share/gnuradio/grc/blocks)
+    spectrumSharing_scheduler.block.yml
+    spectrumSharing_CAF.block.yml DESTINATION share/gnuradio/grc/blocks)
