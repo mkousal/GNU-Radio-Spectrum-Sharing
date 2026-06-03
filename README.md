@@ -71,6 +71,17 @@ Generates periodic TX enable/disable control signals.
 - **Output**: Binary TX enable stream (1=transmit, 0=silent)
 - **Parameters**: sample_rate, on_ms, off_ms
 
+#### 4. CAF (Cyclic Autocorrelation Function)
+Estimates the 2D cyclic autocorrelation (CAF) of an input complex vector to detect cyclostationary features.
+- **Input**: Complex vector stream (`vlen = Input Window Length`) of length `input_len` (default 1024)
+- **Outputs**: `metric` (float stream) — a simple peak-to-baseline metric; `caf_mesh` (float vector) — flattened magnitude mesh of the CAF
+- **Parameters**: `input_len`, `tau_vec`, `alpha_vec`, `peak_tau`, `peak_alpha` (see GRC block for defaults)
+- **Notes**: The implementation computes CAF over the provided `tau` (delay) and `alpha` (cyclic frequency) search grids and reports the configured peak location and a normalized peak metric.
+
+You can find the GNU Radio block definition (GRC YAML) at [gr-spectrumSharing/grc/spectrumSharing_CAF.block.yml](gr-spectrumSharing/grc/spectrumSharing_CAF.block.yml) and the Python implementation at [gr-spectrumSharing/python/spectrumSharing/CAF.py](gr-spectrumSharing/python/spectrumSharing/CAF.py#L1-L240).
+
+A simple test flowgraph is included: [test_caf_realHW.grc](test_caf_realHW.grc). Open it in GNU Radio Companion to run a quick CAF measurement example.
+
 ---
 
 ## Installation & Building
